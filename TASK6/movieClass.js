@@ -6,7 +6,7 @@ class Movie {
         this.studio = studio;
         this.rating = rating;
     }
-   getPG(movies) {
+   getPG(_movies) {
         if (this.rating === 'PG') {
             console.log(`${this.title} This movie rating equal to PG`)
         }
