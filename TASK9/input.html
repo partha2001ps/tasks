@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+    <style>
+        #full{
+           align-items: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        .cla{
+            display: grid;
+            grid-template-columns: repeat(4,70px);
+            background-color: rgb(193, 189, 191);
+            padding-top: 20px;
+            border: solid rgb(124, 122, 122);
+            box-shadow:-4px 6px 7px rgb(124, 122, 122) ;
+        }
+       .in{
+        display: grid;
+      grid-column: span 4;
+      height: 40px;
+      padding: 10px;
+      margin:5%;
+      border-style: none;
+      background-color: rgb(238, 231, 233);
+       }
+       .equ{
+        display: grid;
+        grid-column: span 2;
+        text-align: center;
+        padding-top: 13px;
+       background-color: rgb(9, 207, 238);
+       }
+       button{
+        height: 50px;
+        width:auto;
+        border-style: none;
+        /* border-color:rgb(193, 189, 191); */
+        background-color: rgb(193, 189, 191);
+        margin: 10%;
+         padding:10px;
+       }
+       .blu{
+        color:rgb(24, 77, 237);
+        font-size: larger;
+       }
+    </style>
+</head>
+<body>
+    <div class="container" id="full">
+      <div class="cla">
+        <input class="in" type="text" name="input" placeholder="0" id="inp">
+        <button onclick="allclear()" style="color: rgb(250, 8, 8);">C</button>
+        <button onclick="del()"><--</button>
+        <button class="blu" onclick="display('.')">.</button>
+        <button class="blu" onclick="display('*')">*</button>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button class="blu" onclick="display('/')">/</button>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button class="blu" onclick="display('-')">-</button>
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button class="blu" onclick="display('+')">+</button>
+        <button onclick="display('0')">0</button>
+        <button onclick="display('00')">00</button>
+        <button class="equ" onclick="calclulate()">=</button>
+      </div>
+    </div>
+    <script>
+    let dis=document.getElementById('inp');
+    function display(num){
+        dis.value+=num;
+    }
+    function calclulate(){
+        try{
+            dis.value=eval(dis.value)
+        }
+        catch(err){
+            alert('invaild')
+        }
+    }
+  function del(){
+    dis.value=dis.value.slice(0,-1)
+  }
+  function allclear(){
+    dis.value=""
+  }
+    </script>
+</body>
+</html>
