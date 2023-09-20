@@ -52,49 +52,6 @@
     </style>
 </head>
 <body>
-    <div class="container" id="full">
-      <div class="cla">
-        <input class="in" type="text" name="input" placeholder="0" id="inp">
-        <button onclick="allclear()" style="color: rgb(250, 8, 8);">C</button>
-        <button onclick="del()"><--</button>
-        <button class="blu" onclick="display('.')">.</button>
-        <button class="blu" onclick="display('*')">*</button>
-        <button onclick="display('7')">7</button>
-        <button onclick="display('8')">8</button>
-        <button onclick="display('9')">9</button>
-        <button class="blu" onclick="display('/')">/</button>
-        <button onclick="display('4')">4</button>
-        <button onclick="display('5')">5</button>
-        <button onclick="display('6')">6</button>
-        <button class="blu" onclick="display('-')">-</button>
-        <button onclick="display('1')">1</button>
-        <button onclick="display('2')">2</button>
-        <button onclick="display('3')">3</button>
-        <button class="blu" onclick="display('+')">+</button>
-        <button onclick="display('0')">0</button>
-        <button onclick="display('00')">00</button>
-        <button class="equ" onclick="calclulate()">=</button>
-      </div>
-    </div>
-    <script>
-    let dis=document.getElementById('inp');
-    function display(num){
-        dis.value+=num;
-    }
-    function calclulate(){
-        try{
-            dis.value=eval(dis.value)
-        }
-        catch(err){
-            alert('invaild')
-        }
-    }
-  function del(){
-    dis.value=dis.value.slice(0,-1)
-  }
-  function allclear(){
-    dis.value=""
-  }
-    </script>
+  <script src="./script.js"></script>
 </body>
 </html>
