@@ -13,7 +13,7 @@ butn.style.color='red'
 let butn1=document.createElement('button');
 butn1.className='blu'
 butn1.addEventListener('click',del);
-butn1.textContent='<--'
+butn1.textContent='←'
 let butn2=document.createElement('button');
 butn2.className='blu'
 butn2.addEventListener('click',()=>display('.'));
@@ -21,7 +21,7 @@ butn2.textContent='.'
 let butn3=document.createElement('button');
 butn3.className='blu'
 butn3.addEventListener('click',()=>display('*'));
-butn3.textContent='*'
+butn3.textContent='×'
 let butn4=document.createElement('button');
 butn4.addEventListener('click',()=>display('7'));
 butn4.textContent='7'
