@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(226, 235, 239);
+        }
+        
+        .inside{
+          padding: 10px;
+          border: solid black;
+          box-shadow: 5px 5px 12px rgb(6, 101, 244);
+        }
+        .full{
+            margin: 4%;
+            padding: 2px;
+        }
+        #fname{
+            margin:20px;
+        }
+        #lname{
+          margin:20px;
+        }
+       .addresses{
+        margin:20px;
+        width: 200px;
+       }
+       .hello{
+        margin-top: 25px;
+    
+       }
+       .sel{
+       margin-top: 25px;
+       }
+       .addr{
+        margin-left: 50px;
+       }
+       .table{
+        margin-top: 50px;
+       padding: 10px;
+       }
+       .thead{
+        padding: 15px;
+       }
+       .butn{
+      margin-left: 40vh;
+      margin-top: 30px;
+      margin-bottom: 10px;
+     padding: 10px;
+     width: 100px;
+     
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" method="get" class="cont" id="myForm">
+           <div class="inside"> <label for="fname">First Name:</label>
+            <input type="text" id="fname" class="full" required>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" class="Full" required> 
+           <div>
+            <label for="addresses" class="add">Address:</label>
+            <input type="text" name="address" class="addresses" id="addre">
+           </div>
+          <label for="pincode">Pincode:</label>
+          <input type="number" name="pincode" id="pincode" class="addresses" required maxlength="6" minlength="6">
+          <div>
+            <label for="Gender">Gender:</label>
+            <label for="male" class="addresses">Male</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="female" class="addresses">Female</label>
+          <input type="radio" name="gender" id="female" value="female">
+          
+          </div>
+          <label for="choice of food">choice of food:</label>
+          <input type="checkbox" name="food" value="Dosa" id="ds" class="hello">
+          <label for="ds" class="hello">Dosa</label>
+          <input type="checkbox" name="food" value="Parotta" id="pa" class="hello">
+          <label for="pa" class="hello">Parotta</label>
+          <input type="checkbox" name="food" value="Chicken Rice" id="cr" class="hello">
+          <label for="cr" class="hello">Chicken Rice</label>
+          <input type="checkbox" name="food" value="Chicken biriyani" id="cb" class="hello">
+          <label for="cb">Chicken biriyani</label>
+          <input type="checkbox" name="food" value="Mattan" id="ma" class="hello">
+          <label for="ma" class="hello">Mattan</label>
+          
+         <div class="sel">
+          <label for="select">State</label>
+          <select name="State" id="select" required>
+            <option value="">Select</option>
+            <option value="TamilNadu">TamilNadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="karnataka">karnataka</option>
+            <option value="Dehli">Dehli</option>
+          </select>
+      
+            <label for="selec" class="addr" >country</label>
+            <select name="country" id="selec" required>
+              <option value="">Select</option>
+              <option value="India">India</option>
+              <option value="America">America</option>
+              <option value="Newzealand">Newzealand</option>
+              <option value="Chian">Chian</option>
+            </select>
+          </div>
+          <div>
+            <button class="butn" id="but">submit</button>
+          </div>
+          </div>
+          <table class="table" id="tap">
+            <tr>
+              <th class="thead">First Name</th>
+              <th class="thead">Last Name</th>
+              <th class="thead">Address</th>
+              <th class="thead">Pincode</th>
+              <th class="thead">Gender</th>
+              <th class="thead">Food</th>
+              <th class="thead">State</th>
+              <th class="thead">Country</th>
+            </tr>
+          </table>
+        </form>
+
+      </div>
+         
+
+    <script src="./script.js"></script>
