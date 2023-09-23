@@ -47,8 +47,8 @@
 
                             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&appid=${apiKey}&units=metric`)
                                 .then((res) => res.json())
-                                .then((weatherData) => {
-                                    const temperature = weatherData.main.temp;
+                                .then((data) => {
+                                    const temperature = data.main.temp;
                                     console.log(temperature);
                                     weather.innerHTML = `
                                         <p class="card-text text-light mt-3 d-flex justify-content-center">Temperature: ${temperature}°C</p>
