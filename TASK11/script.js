@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                         .catch((error) => {
                             console.error('Error fetching weather data:', error);
-                            weather.innerHTML = '<p class="text-danger">Error fetching weather data</p>';
+                            weather.innerHTML = '<p class="text-danger text-light">No weather data Found</p>';
                         });
                 });
             });
