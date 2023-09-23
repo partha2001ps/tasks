@@ -18,23 +18,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 cardhead.classList.add("card", "card-header", "card-body", "bg-secondary");
                 card.appendChild(cardhead);
                 row.appendChild(card);
+                const capital=country.capital?country.capital[0]:'NA'
                 cardhead.innerHTML = `
                     <h4 class="d-flex justify-content-center text-light bg-black">${country.name.common}</h6>
                     <img class="card-img mt-4" src="${country.flags.png}" alt="flag">
-                    <p class="card-text text-light mt-3 d-flex justify-content-center">Capital: ${country.capital}</p>
+                    <p class="card-text text-light mt-3 d-flex justify-content-center">Capital: ${capital}</p>
                     <p class="card-text text-light d-flex justify-content-center">Region: ${country.region}</p>
                     <p class="card-text text-light d-flex justify-content-center">Country Code: ${country.cca2}</p>
-                    <button class="btn btn-primary">Click for Weather</button>
+                    <button class="btn btn-primary" id="hi">Click for Weather</button>
                     <div class="weather"></div>
                 `;
 
-                const weatherButton = cardhead.querySelector('button.btn.btn-primary');
+                const weatherButton = cardhead.querySelector('#hi');
                 const weather = cardhead.querySelector('.weather');
 
                 weatherButton.addEventListener('click', () => {
                     const apiKey = "cc86f1689f25fe0c147c87a9e570177c";
 
-                    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&appid=${apiKey}&units=metric`)
+                    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${apiKey}&units=metric`)
                         .then((res) => res.json())
                         .then((data) => {
                             const temperature = data.main.temp;
