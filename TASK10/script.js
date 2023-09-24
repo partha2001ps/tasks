@@ -2,92 +2,91 @@ let a = document.getElementById('display')
 
 
 
-let countdisplay10=function(call){
+let countdisplay10=(call)=>{
   setTimeout(()=>{
      a.innerText='10';
     call();
    },1000)
   }
-  let countdisplay9=function(call){
+  let countdisplay9=(call)=>{
   setTimeout(()=>{
      a.innerText='9';
      call();
    },1000)
   }
-  let countdisplay8=function(call){
+  let countdisplay8=(call)=>{
   setTimeout(()=>{
      a.innerText='8';
      call();
    },1000)
   }
-  let countdisplay7=function(call){
+  let countdisplay7=(call)=>{
   setTimeout(()=>{
      a.innerText='7';
      call();
    },1000)
   }
-  let countdisplay6=function(call){
+  let countdisplay6=(call)=>{
   setTimeout(()=>{
      a.innerText='6';
      call();
    },1000)
   }
-  let countdisplay5=function(call){
+  let countdisplay5=(call)=>{
   setTimeout(()=>{
      a.innerText='5';
      call();
    },1000)
   }
-  let countdisplay4=function(call){
+  let countdisplay4=(call)=>{
   setTimeout(()=>{
      a.innerText='4';
      call();
    },1000)
   }
-  let countdisplay3=function(call){
+  let countdisplay3=(call)=>{
   setTimeout(()=>{
      a.innerText='3';
      call();
    },1000)
   }
-  let countdisplay2=function(call){
+  let countdisplay2=(call)=>{
   setTimeout(()=>{
      a.innerText='2';
      call();
    },1000)
   }
-  let countdisplay1=function(call){
+  let countdisplay1=(call)=>{
   setTimeout(()=>{
      a.innerText='1';
      call();
    },1000)
   }
+
   
-  
-  countdisplay10(function(){
-  countdisplay9(function(){
-  countdisplay8(function(){
-  countdisplay7(function(){
-    countdisplay6(function(){
-      countdisplay5(function(){
-        countdisplay4(function(){
-      countdisplay3(function(){
-        countdisplay2(function(){
-        countdisplay1(function(){
-        setTimeout(()=>{
-          a.innerText="Happy Indepedance day"
-              call();
-                  },1000)
-  
+  countdisplay10(()=>{
+    countdisplay9(() => {
+      countdisplay8(() => {
+        countdisplay7(() => {
+          countdisplay6(() => {
+            countdisplay5(() => {
+              countdisplay4(() => {
+                countdisplay3(() => {
+                  countdisplay2(() => {
+                    countdisplay1(() => {
+                      setTimeout(()=>{
+                        a.innerText="Happy Indepedance day"
+                            call();
+                                },1000)
+                    })
                   })
-               })
-             })
-           })
-         })
-       })
+                })
+              })
+            })
+          })
+        })
+      })
     })
-  })
-  });
   });
   //  let count=10
 //    let countdisplay=function(count,call){
