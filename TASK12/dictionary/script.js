@@ -1,112 +1,51 @@
-// get the references of the html elements
-let form = document.getElementById('dictform');
-let wordInput = document.getElementById('wordinput');
-let wordInfo = document.getElementById('meaningforward');
+//   to get the element the  from html
 
-
-// complete the getMeaning(word) function
-// make a fetch call to fetch the meaning of the word
-// parse the meaning and append it to the wordInfo element
-async function getMeaning(word) {
+    let inputWord = document.querySelector(".inputWord")
+    let buttonSearch=document.querySelector(".buttonSearch")
+    let meaning = document.querySelector('.meaning');
+// to use async function to click search button to api use meanings and part of speech
+async function searchmean() {
+        // to error handle use try and catch
     try {
-        // make an api call to get the response with the word, meanings, definitions,etc.
-        let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-
-        // parse the response data to javascript object
-        let data = await response.json();
-        console.log(data);
-
-        // get the meanings from the data object and store it in a variable
-        let meanings = data[0].meanings;
-
-        // get the audio url from the data and store it in a reference
-        let audioSource = data[0].phonetics[0].audio.toString();
-        // console.log(meanings);
+    // to get the word from the user is store bu word
+        const word = inputWord.value;
+        // api link fetch json link
+   let res=await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+   let data=await res.json();
+//  console.log(data)
+        let meaningword = data[0].meanings;
         
-        let paragraph = document.createElement('div');
+        //  to create the list and list items
 
-        // create an unordered list
-        let list = document.createElement('ul');
+        let list = document.createElement('ul')
+        // to use for loop meaning handle
 
-        // remove the bullets in the unordered list
-        list.style.listStyleType = 'none';
+    for(let partOfSpeech of meaningword ){
+        let listItem = document.createElement('li');
+        // to append the inner html listItem
 
-        // loop through the meanings and for every meaning
-        // create a list item and append it to the main list
-        for (let partOfSpeech of meanings) {
-            // console.log(partOfSpeech);
-            let listItem = document.createElement('li');
+        listItem.innerHTML = ` <b class="red">Part Of Speech:${partOfSpeech.partOfSpeech}</b>`;
+        // to create the order list is sublist
 
-            // set the content of the list item
-            listItem.innerHTML = `PartOfSpeech: <b>${partOfSpeech.partOfSpeech}</b>`;
-
-            // create a ordered list
-            // create it as a sub list so that we can append it to the main list - unordered list
-            let subList = document.createElement('ol');
-
-            // loop through the definitions of every part of speech
-            // create a list item and append it to the ordered list
-            for (let definition of partOfSpeech.definitions) {
-                let subListItem = document.createElement('li');
-                subListItem.innerHTML = `${definition.definition}`;
-                subList.appendChild(subListItem);
-            }
-
-            // append the sublist to the list item
-            listItem.appendChild(subList);
-
-            // append the list items to the main list
-            list.appendChild(listItem);
+        let subList = document.createElement('ol');
+        
+    for (let definition of partOfSpeech.definitions) {
+            let subListItem = document.createElement('li');
+            subListItem.innerHTML = `${definition.definition}`;
+            subList.appendChild(subListItem);
         }
 
-        // reset the wordInfo div, so that the meanings everytime wont get appended below one another
-        wordInfo.innerHTML = ``;
+        // append the sublist to the list item
+        listItem.appendChild(subList);
 
-        // set the content of the paragraph reference named div element
-        // the element includes an audio icon, audio element and the word the user have searched for the meaning
-        paragraph.innerHTML = `
-            <i class="fa-solid fa-volume-high" id="audio-icon"></i>
-            <audio id="audio">
-                <source src=${audioSource} type='audio/mpeg'>
-            </audio>
-            Word: <b>${data[0].word}</b>
-        `;
-
-        wordInfo.appendChild(paragraph);
-        wordInfo.appendChild(list);
-
-        // attach the click event to the audio icon
-        document.getElementById('audio-icon').addEventListener('click', () => {
-            // play the audio by selecting the audio element and calling the play method
-            document.getElementById('audio').play();
-        });
-
-    } catch (error) {
-        console.log('error fetching the meaning', error);
+        // append the list items to the main list
+        list.appendChild(listItem);
     }
+
+meaning.innerHTML=``;
+meaning.appendChild(list);
 }
-
-// attach a submit event to the form element
-form.addEventListener('submit', (event) => {
-    // prevents the default submit behaviour of the form
-    // for example: refereshing the whole page after the form gets submitted
-    event.preventDefault();
-
-    // get the word the user typed in the search box
-    let word = wordInput.value;
-
-    getMeaning(word);
-});
-
-// get the reference of the button
-let buttonSearch = document.getElementById('buttonSearch');
-
-// attach the click event to the search button
-buttonSearch.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    // get the word the user typed in the search box
-    let word = wordInput.value;
-
-    getMeaning(word);
-});
+catch (error) {
+    console.log('error fetching the meaning', error);
+}
+}
