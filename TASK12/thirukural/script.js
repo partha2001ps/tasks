@@ -23,7 +23,7 @@
                             <h4 class="red">${engtitle}</h4>
                             <h6>${engChap}</h6>
                             <p>${engKural1}</p>
-                            <p>${engExp}</p><hr>`
+                            <p>${engExp}</p>`
         full.appendChild(tamil)                    
 
      })
@@ -46,7 +46,7 @@
                     <p>${i}: ${data.line1}</p>
                     <p class="line2">${data.line2}</p>
                     <button class="kuralExplain" onclick="explainkural(${i})">Explain</button>
-                    <div class="full"></div>
+                    <div class="full"></div><hr>
             `;
 
             // Append the order to the outblock container
