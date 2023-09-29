@@ -22,7 +22,8 @@ let detailes = document.querySelector(".detailes")
             console.log(temperature);
             // to create the element temprature
         let temp=document.createElement('p')
-        temp.innerHTML=`<p>Temperature : ${temperature}℃</p><p>☁️${weat}</p>`
+            temp.innerHTML = `<b>Temperature : ${temperature}℃</b>
+        <br><b>☁️${weat}</b>`
         detailes.appendChild(temp)
 
         })
