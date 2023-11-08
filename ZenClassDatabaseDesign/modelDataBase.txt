@@ -1,0 +1,154 @@
+
+      Database Model Design for zenclass.
+   
+     -The zen class multiple coures and student .
+     -each student unique email Id and password .
+     -each student coures detailes;
+     -all student task,assiengment and project to assign.
+     -To particular time to finish all task.
+     -Web_Kata and Code_Kata progarm
+     -class review mentor that particular class
+     -Mock_Interview score references from student and mentor
+
+
+    List of tables:
+
+       1.Students
+       2.Courses
+       3.classes_detailes
+       4.Students_Classes
+       5.Mentors
+       6.Module
+       7.Tasks
+       8.Attendances
+       9.Student_Report
+       10.Mock_interview
+       11.Code_kata
+       12.Web_kata
+       13.Certificates
+       14.Class_feedback
+
+
+    list of tables and columns:
+
+
+        1. Students:
+        - student_id: int, primary key, auto_increment
+        - email: varchar(255), unique, not null
+        - password: varchar(255), not null
+        - first_name: varchar(255), not null
+        - last_name: varchar(255), not null
+        - date_of_birth: date, not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        2. Courses:
+        - course_id: int, primary key, auto_increment
+        - course_name: varchar(255), not null
+        - course_description: text
+        - start_date: date, not null
+        - end_date: date, not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        3. Classes_Details:
+        - class_id: int, primary key, auto_increment
+        - course_id: int, foreign key to courses, not null
+        - class_name: varchar(255), not null
+        - class_description: text
+        - class_start_date: date, not null
+        - class_end_date: date, not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        4. Students_Classes:
+        - student_id: int, foreign key references students(student_id), not null
+        - class_id: int, foreign key to classes_details, not null
+        - created_at: datetime, not null
+
+        5. Mentors:
+        - mentor_id: int, primary key, auto_increment
+        - mentor_name: varchar(255), not null
+        - mentor_email: varchar(255), not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        6. Modules:
+        - module_id: int, primary key, auto_increment
+        - class_id: int, foreign key to classes_details, not null
+        - module_name: varchar(255), not null
+        - module_description: text
+        - module_start_date: date, not null
+        - module_end_date: date, not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        7. Tasks:
+        - task_id: int, primary key, auto_increment
+        - module_id: int, foreign key to modules, not null
+        - class_id: int, foreign key to classes_details, not null
+        - task_name: varchar(255), not null
+        - task_description: text
+        - task_deadline: date
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        8. Attendances:
+        - attendance_id: int, primary key, auto_increment
+        - class_id: int, foreign key to classes_details, not null
+        - student_id: int, foreign key references students(student_id), not null
+        - attendance_date: date, not null
+        - status: varchar(255), not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        9. Student_Report:
+        - report_id: int, primary key, auto_increment
+        - student_id: int, foreign key references students(student_id), not null
+        - class_id: int, foreign key to classes_details, not null
+        - grade: varchar(255)
+        - comments: text
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        10. Mock_Interview:
+        - interview_id: int, primary key, auto_increment
+        - student_id: int, foreign key references students(student_id), not null
+        - interview_date: date, not null
+        - interviewer_id: int, foreign key to mentors, not null
+        - interview_notes: text
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        11. Code_Kata:
+        - Codekata_id: int, primary key, auto_increment
+        - student_id: int, foreign key references students(student_id), not null
+        - Codekata_date: date, not null
+        - Codekata_score: int
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        12. Web_Kata:
+        - Webkata_id: int, primary key, auto_increment
+        - student_id: int, foreign key references students(student_id), not null
+        - Webkata_date: date, not null
+        - Webkata_score: int
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        13. Certificates:
+        - certificate_id: int, primary key, auto_increment
+        - student_id: int, foreign key references students(student_id), not null
+        - course_id: int, foreign key to courses, not nul
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+        14. Class_Feedback:
+        - feedback_id: int, primary key, auto_increment
+        - class_id: int, foreign key to classes_details, not null
+        - student_id: int, foreign key references students(student_id), not null
+        - mentor_id: int, foreign key to mentors, not null
+        - feedback_text: text
+        - feedback_date: datetime, not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
