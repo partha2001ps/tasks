@@ -1,0 +1,10 @@
+{
+    "_id": {
+      "$oid": "654cab3a53c869bb475b1a7f"
+    },
+    "id": "10",
+    "product_name": "Generic Wooden Pizza",
+    "product_price": 84,
+    "product_material": "Frozen",
+    "product_color": "indigo"
+  }

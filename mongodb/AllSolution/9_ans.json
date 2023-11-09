@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "654cab3a53c869bb475b1a77"
+  },
+  "id": "2",
+  "product_name": "Practical Fresh Sausages",
+  "product_price": 911,
+  "product_material": "Cotton",
+  "product_color": "indigo"
+},
+{
+  "_id": {
+    "$oid": "654cab3a53c869bb475b1a7f"
+  },
+  "id": "10",
+  "product_name": "Generic Wooden Pizza",
+  "product_price": 84,
+  "product_material": "Frozen",
+  "product_color": "indigo"
+},
+{
+  "_id": {
+    "$oid": "654cab3a53c869bb475b1a86"
+  },
+  "id": "17",
+  "product_name": "Incredible Metal Car",
+  "product_price": 36,
+  "product_material": "Fresh",
+  "product_color": "indigo"
+},
+{
+  "_id": {
+    "$oid": "654cab3a53c869bb475b1a8e"
+  },
+  "id": "25",
+  "product_name": "Licensed Steel Car",
+  "product_price": 20,
+  "product_material": "Cotton",
+  "product_color": "indigo"
+}]

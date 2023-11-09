@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "654cab3a53c869bb475b1a7e"
+  },
+  "id": "9",
+  "product_name": "Awesome Wooden Ball",
+  "product_price": 28,
+  "product_material": "Soft",
+  "product_color": "azure"
+},
+{
+  "_id": {
+    "$oid": "654cab3a53c869bb475b1a80"
+  },
+  "id": "11",
+  "product_name": "Unbranded Wooden Cheese",
+  "product_price": 26,
+  "product_material": "Soft",
+  "product_color": "black"
+},
+{
+  "_id": {
+    "$oid": "654cab3a53c869bb475b1a88"
+  },
+  "id": "19",
+  "product_name": "Intelligent Cotton Chips",
+  "product_price": 46,
+  "product_material": "Soft",
+  "product_color": "azure"
+}]
